@@ -332,6 +332,38 @@ const EdgeFilter = ({ open }) => {
                     ReadGMSAPassword
                 </label>
             </div>
+            <div>
+                <input
+                    className='checkbox-inline'
+                    type='checkbox'
+                    name='CreateChildUser'
+                    checked={edgeIncluded.CreateChildUser}
+                    onChange={e => handleEdgeChange(e)}
+                />
+                <label
+                    onClick={e => handleEdgeChange(e)}
+                    name='CreateChildUser'
+                >
+                    {' '}
+                    CreateChildUser
+                </label>
+            </div>
+            <div>
+                <input
+                    className='checkbox-inline'
+                    type='checkbox'
+                    name='CreateChildComputer'
+                    checked={edgeIncluded.CreateChildComputer}
+                    onChange={e => handleEdgeChange(e)}
+                />
+                <label
+                    onClick={e => handleEdgeChange(e)}
+                    name='CreateChildComputer'
+                >
+                    {' '}
+                    CreateChildComputer
+                </label>
+            </div>
             <div className={'edge-filter-heading'}>
                 <h4>Containers</h4>
                 <button

@@ -588,6 +588,14 @@ function processAceArrayNew(aces, objectid, objecttype, queries) {
             rights.push(aceType);
         }
 
+        if (aceType === 'CreateChild') {
+            if (right === 'User') {
+                rights.push('CreateChildUser');
+            } else if (right === 'Computer') {
+                rights.push('CreateChildComputer');
+            }
+        } 
+
         if (right === 'GenericAll') {
             rights.push('GenericAll');
         }

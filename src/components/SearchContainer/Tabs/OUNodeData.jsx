@@ -78,6 +78,22 @@ const OUNodeData = () => {
                     properties={nodeProps}
                     label={label}
                 />
+                <CollapsibleSection header='Inbound Control'>
+                <NodeCypherLink
+                        property='Create child computers'
+                        target={objectid}
+                        baseQuery={
+                            'MATCH p=(n)-[r:CreateChildComputer]->(o:OU {objectid: $objectid})'
+                        }
+                    />
+                <NodeCypherLink
+                        property='Create child users'
+                        target={objectid}
+                        baseQuery={
+                            'MATCH p=(n)-[r:CreateChildUser]->(o:OU {objectid: $objectid})'
+                        }
+                    />
+                </CollapsibleSection>
                 <CollapsibleSection header='Affecting GPOs'>
                     <NodeCypherLink
                         property='GPOs Directly Affecting This OU'

@@ -321,6 +321,8 @@ if (typeof conf.get('edgeincluded') === 'undefined') {
         ReadGMSAPassword: true,
         HasSIDHistory: true,
         CanPSRemote: true,
+        CreateChildComputer: true,
+        CreateChildUser: true,
     });
 }
 
@@ -364,6 +366,16 @@ if (!appStore.edgeincluded.hasOwnProperty('HasSIDHistory')) {
 
 if (!appStore.edgeincluded.hasOwnProperty('CanPSRemote')) {
     appStore.edgeincluded.HasSIDHistory = true;
+    conf.set('edgeincluded', appStore.edgeincluded);
+}
+
+if (!appStore.edgeincluded.hasOwnProperty('CreateChildComputer')) {
+    appStore.edgeincluded.CreateChildComputer = true;
+    conf.set('edgeincluded', appStore.edgeincluded);
+}
+
+if (!appStore.edgeincluded.hasOwnProperty('CreateChildUser')) {
+    appStore.edgeincluded.CreateChildUser = true;
     conf.set('edgeincluded', appStore.edgeincluded);
 }
 
